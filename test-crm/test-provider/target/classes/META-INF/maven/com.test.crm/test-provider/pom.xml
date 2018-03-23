@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.test.crm</groupId>
+    <artifactId>test-crm</artifactId>
+    <version>0.0.1</version>
+  </parent>
+  <artifactId>test-provider</artifactId>
+  <name>test-provider</name>
+  <url>http://maven.apache.org</url>
+   <!-- **************************** /Properties 配置 **************************** -->
+  <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <junit.version>4.4</junit.version>
+      <springframework.version>4.3.3.RELEASE</springframework.version>
+      <commonsLogging.version>1.2</commonsLogging.version>
+  </properties>
+  <dependencies>
+  
+  	    <!-- junit -->
+  	    <dependency>
+		   <groupId>junit</groupId>
+		   <artifactId>junit</artifactId>
+		   <version>${junit.version}</version>
+		   <scope>test</scope>
+	    </dependency>
+  
+	    <!-- Logger日志 -->
+	    <dependency> 
+	       <groupId>log4j</groupId>
+	       <artifactId>log4j</artifactId>
+	       <version>1.2.14</version>
+	    </dependency>
+	    
+	    <dependency>
+	  	  <groupId>com.test.crm</groupId>
+	  	  <artifactId>test-biz</artifactId>
+	  	  <version>0.0.1</version>
+	    </dependency>
+	
+        <!-- **************************** Spring 依赖 **************************** -->
+        <!-- 添加Spring-core包 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <!-- 添加spring-tx包 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <!-- Spring ORM 相关-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <!-- 添加spring-jdbc包 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <!-- Spring bean包-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <!-- Spring test包-->
+        <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>${commonsLogging.version}</version>
+        </dependency>
+        <!--添加aspectjweaver包 -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.5</version>
+        </dependency>
+        <!-- **************************** /Spring 依赖 **************************** -->
+
+        <!-- **************************** Dubbo 依赖 **************************** -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.5.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- zookeeper客户端 -->
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <!-- **************************** /Dubbo 依赖 **************************** -->
+
+        <!-- **************************** interface 依赖 **************************** -->
+	  <dependency>
+	  	  <groupId>com.test.crm</groupId>
+	  	  <artifactId>test-service</artifactId>
+	  	  <version>0.0.1</version>
+	  </dependency>
+	  
+	  
+  </dependencies>
+  
+</project>
